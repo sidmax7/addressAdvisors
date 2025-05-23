@@ -1,0 +1,339 @@
+<section class="contact section fade-in" id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-description">
+        Ready to find your perfect property? Let's discuss your real estate needs.
+      </p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-form-wrapper fade-in">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone No</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="reason">Reason for Enquiry</label>
+              <select id="reason" name="reason" required>
+                <option value="">Select one</option>
+                <option value="commercial">Commercial Property</option>
+                <option value="residential">Residential Property</option>
+                <option value="industrial">Industrial Property</option>
+                <option value="hospitality">Hospitality Property</option>
+                <option value="land">Land Development</option>
+                <option value="investment">Investment Consultation</option>
+                <option value="valuation">Property Valuation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-large">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: linear-gradient(135deg, var(--bg-section) 0%, var(--bg-color) 100%);
+    padding: 6rem 0;
+  }
+  
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+  }
+  
+  .section-title {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .section-description {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .contact-form-wrapper {
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .contact-form {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(31, 41, 55, 0.1);
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid rgba(31, 41, 55, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--bg-color);
+    color: var(--text-color);
+    height: 48px;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-primary {
+    background: #dc2626;
+    color: var(--text-white);
+    width: 100%;
+    height: 48px;
+  }
+  
+  .btn-primary:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-item {
+    background: var(--bg-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(31, 41, 55, 0.06);
+    transition: var(--transition);
+  }
+  
+  .contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .contact-icon-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25);
+  }
+  
+  .contact-details h4 {
+    color: var(--text-color);
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  
+  .contact-details p {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-content {
+      justify-content: center;
+    }
+    
+    .contact-form-wrapper {
+      max-width: 100%;
+    }
+    
+    .form-row {
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact {
+      padding: 3rem 0;
+    }
+    
+    .section-header {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .contact-form {
+      padding: 1.5rem;
+    }
+    
+    .form-row {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+      height: 44px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-form {
+      padding: 1rem;
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    
+    .form-group label {
+      font-size: 0.75rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+      padding: 0.75rem;
+      height: 42px;
+      font-size: 0.9rem;
+    }
+    
+    .btn {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+      height: 44px;
+    }
+  }
+</style>
+
+<script>
+  // Contact form handling
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm') as HTMLFormElement;
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Simple form validation
+        const requiredFields = ['name', 'email', 'phone'];
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+          const input = contactForm.querySelector(`[name="${field}"]`) as HTMLInputElement;
+          if (!input.value.trim()) {
+            input.style.borderColor = '#dc2626';
+            isValid = false;
+          } else {
+            input.style.borderColor = 'rgba(31, 41, 55, 0.1)';
+          }
+        });
+        
+        if (isValid) {
+          // Show success message (in a real app, you'd send this to a server)
+          alert('Thank you for your inquiry! We will get back to you soon.');
+          contactForm.reset();
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      });
+    }
+  });
+</script> 

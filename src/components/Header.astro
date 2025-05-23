@@ -1,0 +1,353 @@
+<header class="header" id="main-header">
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-content">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#home">
+            <img src="/assets/addressAdvisors.svg" alt="Address Advisors" />
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-menu">
+          <li><a href="#services" class="nav-link">SERVICES</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <ul class="mobile-menu">
+      <li><a href="#services" class="mobile-link">SERVICES</a></li>
+      <li><a href="#about" class="mobile-link">ABOUT</a></li>
+      <li><a href="#contact" class="mobile-link">CONTACT</a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+    
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.08) 30%,
+      rgba(255, 255, 255, 0.04) 60%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
+    border: none;
+    box-shadow: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  
+  /* Top waterfall layer - Heavy blur */
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    backdrop-filter: blur(25px) saturate(1.5) brightness(1.1);
+    -webkit-backdrop-filter: blur(25px) saturate(1.5) brightness(1.1);
+    z-index: -3;
+    mask: linear-gradient(180deg, black 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, transparent 100%);
+    -webkit-mask: linear-gradient(180deg, black 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  }
+  
+  /* Middle waterfall layer - Medium blur */
+  .header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    z-index: -2;
+    mask: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 80%, transparent 100%);
+    -webkit-mask: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 80%, transparent 100%);
+  }
+  
+  /* Add a third layer for the waterfall cascade effect */
+  .nav-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    backdrop-filter: blur(6px) saturate(1.1);
+    -webkit-backdrop-filter: blur(6px) saturate(1.1);
+    z-index: -1;
+    mask: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.2) 90%, transparent 100%);
+    -webkit-mask: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.2) 90%, transparent 100%);
+  }
+  
+  /* .nav {
+    padding: 1.5rem 0;
+  } */
+  
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    flex-shrink: 0; /* Prevent nav menu from shrinking */
+  }
+  
+  /* Logo */
+  .logo {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+    
+  }
+  
+  .logo a {
+    display: block;
+  }
+  
+  .logo img {
+    height: 75px; /* Reduced logo size for better proportion */
+    width: auto;
+  }
+  
+  /* Desktop Navigation */
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2.5rem; /* Increased gap between nav items */
+    flex-shrink: 0; /* Prevent nav menu from shrinking */
+  }
+  
+  .nav-link {
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .nav-link:hover {
+    color: white;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile Toggle */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+    flex-shrink: 0; /* Prevent mobile toggle from shrinking */
+  }
+  
+  .mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: var(--transition);
+  }
+  
+  .mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+  
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid rgba(31, 41, 55, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .mobile-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mobile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 2rem;
+  }
+  
+  .mobile-menu li {
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-link {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.125rem;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+    text-transform: uppercase;
+  }
+  
+  .mobile-link:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-menu {
+      display: none;
+    }
+    
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .nav-content {
+      padding: 0 1.5rem; /* Reduced padding on smaller screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-content {
+      padding: 0 1rem; /* Further reduced padding on mobile */
+    }
+
+    .logo img {
+      height: 50px; /* Smaller logo on mobile */
+    }
+  }
+  
+  /* Scrolled state */
+  .header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(31, 41, 55, 0.1);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Remove blur effects when scrolled */
+  .header.scrolled::before {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .header.scrolled::after {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .header.scrolled .nav-content::before {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .header.scrolled .nav-link {
+    color: var(--text-color);
+  }
+  
+  .header.scrolled .nav-link:hover {
+    color: var(--primary-color);
+  }
+  
+  .header.scrolled .mobile-toggle span {
+    background-color: var(--text-color);
+  }
+  
+  .header.scrolled .nav {
+    padding: 0;
+  }
+</style>
+
+<script>
+  // Handle mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const header = document.getElementById('main-header'); // Use ID for header
+    
+    if (mobileToggle && mobileNav) {
+      mobileToggle.addEventListener('click', function() {
+        mobileToggle.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      });
+      
+      // Close mobile menu when clicking on links
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileToggle.classList.remove('active');
+          mobileNav.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+    
+    // Handle header scroll effect
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    }
+  });
+</script> 

@@ -1,0 +1,301 @@
+<section class="blog section fade-in" id="blog">
+  <div class="container">
+    <div class="blog-header fade-in">
+      <h2>Latest Insights</h2>
+      <p>Stay updated with the latest trends and insights in real estate</p>
+    </div>
+    
+    <div class="blog-grid">
+      <article class="blog-card fade-in-left">
+        <div class="blog-image">
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1626&q=80" alt="Real Estate Market Trends" />
+          <div class="blog-category">Market Insights</div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date">December 15, 2024</span>
+            <span class="blog-read-time">5 min read</span>
+          </div>
+          <h3>2024 Real Estate Market Trends: What to Expect</h3>
+          <p>Discover the key trends shaping the real estate market in 2024 and how they impact both buyers and sellers in today's dynamic landscape.</p>
+          <a href="#" class="blog-link">
+            Read More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      
+      <article class="blog-card fade-in">
+        <div class="blog-image">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Real Estate" />
+          <div class="blog-category">Commercial</div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date">December 10, 2024</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h3>Commercial Real Estate Investment Guide</h3>
+          <p>A comprehensive guide to making smart commercial real estate investments in today's market with expert tips and strategies.</p>
+          <a href="#" class="blog-link">
+            Read More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+      
+      <article class="blog-card fade-in-right">
+        <div class="blog-image">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1273&q=80" alt="Property Investment Tips" />
+          <div class="blog-category">Investment</div>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date">December 5, 2024</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h3>Smart Property Investment Strategies for 2024</h3>
+          <p>Learn proven strategies for building wealth through property investment with insights from our experienced advisors.</p>
+          <a href="#" class="blog-link">
+            Read More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+    
+    <div class="blog-cta fade-in">
+      <a href="#" class="cta-button">
+        View All Articles
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .blog {
+    background: var(--bg-color);
+    padding: 6rem 0;
+  }
+  
+  .blog-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+  
+  .blog-header h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .blog-header p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .blog-card {
+    background: var(--bg-section);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid rgba(31, 41, 55, 0.1);
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .blog-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .blog-card:hover .blog-image img {
+    transform: scale(1.05);
+  }
+  
+  .blog-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #dc2626;
+    color: var(--text-white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .blog-content {
+    padding: 2rem;
+  }
+  
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  .blog-content h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .blog-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #dc2626;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .blog-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(4px);
+  }
+  
+  .blog-link svg {
+    transition: var(--transition);
+  }
+  
+  .blog-link:hover svg {
+    transform: translateX(4px);
+  }
+  
+  .blog-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #dc2626, var(--primary-dark));
+    color: var(--text-white);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: var(--transition);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.4);
+  }
+  
+  .cta-button svg {
+    transition: var(--transition);
+  }
+  
+  .cta-button:hover svg {
+    transform: translateX(4px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .blog {
+      padding: 4rem 0;
+    }
+    
+    .blog-header {
+      margin-bottom: 3rem;
+    }
+    
+    .blog-header h2 {
+      font-size: 2rem;
+    }
+    
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .blog-image {
+      height: 200px;
+    }
+    
+    .blog-content {
+      padding: 1.5rem;
+    }
+    
+    .blog-content h3 {
+      font-size: 1.125rem;
+    }
+    
+    .cta-button {
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .blog-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+    
+    .blog-content h3 {
+      font-size: 1rem;
+    }
+    
+    .blog-content p {
+      font-size: 0.9rem;
+    }
+    
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Animation classes will be handled by global.css */
+</style> 

@@ -1,0 +1,316 @@
+<section class="services section fade-in" id="services">
+  <div class="container">
+    <div class="services-header fade-in">
+      <h2>Our Services</h2>
+      <p>Comprehensive real estate solutions tailored to your unique needs</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card fade-in-left">
+        <div class="image-container">
+          <img src="/assets/corp-real-estate-min copy 1-2682d34c.webp" alt="Corporate Real Estate" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Corporate Real Estate</h3>
+              <p>Premium office spaces and corporate facilities designed for business excellence</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Office Buildings</li>
+            <li>Corporate Headquarters</li>
+            <li>Business Parks</li>
+            <li>Co-working Spaces</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card fade-in-right">
+        <div class="image-container">
+          <img src="/assets/residential-bw 1-4188423b.webp" alt="Residential Real Estate" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Residential Real Estate</h3>
+              <p>From luxury apartments to family homes, find your perfect residential property</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Luxury Apartments</li>
+            <li>Family Homes</li>
+            <li>Villas & Penthouses</li>
+            <li>Gated Communities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card fade-in-left">
+        <div class="image-container">
+          <img src="/assets/warehouse 1_11zon-91b81c41.webp" alt="Warehousing & Industrial" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Warehousing & Industrial</h3>
+              <p>Strategic industrial locations and modern warehousing solutions</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Manufacturing Facilities</li>
+            <li>Distribution Centers</li>
+            <li>Cold Storage</li>
+            <li>Logistics Hubs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card fade-in-right">
+        <div class="image-container">
+          <img src="/assets/land_bw 1-25cc53e4.webp" alt="Land Development" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Land</h3>
+              <p>Raw land acquisition and development opportunities for investors</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Agricultural Land</li>
+            <li>Development Plots</li>
+            <li>Commercial Land</li>
+            <li>Zoning & Permits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card fade-in-left">
+        <div class="image-container">
+          <img src="/assets/hospitality 1 1 1 1_11zon-db8634c9.webp" alt="Hospitality Properties" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Hospitality</h3>
+              <p>Premium hospitality properties in prime locations across India</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Hotels & Resorts</li>
+            <li>Restaurants</li>
+            <li>Banquet Halls</li>
+            <li>Tourism Properties</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-card fade-in-right">
+        <div class="image-container">
+          <img src="/assets/Building_bw-9a8154da.jpg" alt="Retail Real Estate" loading="lazy" />
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>Retail Real Estate</h3>
+              <p>Strategic retail locations designed to maximize business success</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-content">
+          <ul class="service-features">
+            <li>Shopping Malls</li>
+            <li>High-Street Retail</li>
+            <li>Food Courts</li>
+            <li>Anchor Stores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--bg-section);
+  }
+  
+  .services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+  
+  .services-header h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .services-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .service-card {
+    background: var(--bg-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid rgba(31, 41, 55, 0.1);
+    position: relative;
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    cursor: pointer;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+  }
+  
+  .image-container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay-content {
+    color: var(--text-white);
+  }
+  
+  .overlay-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-white);
+  }
+  
+  .overlay-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .service-content {
+    padding: 2rem;
+  }
+  
+  .service-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .service-features li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .service-card {
+      margin: 0 1rem;
+    }
+    
+    .services-header {
+      margin-bottom: 3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-content {
+      padding: 1.5rem;
+    }
+    
+    .overlay {
+      padding: 1rem;
+    }
+    
+    .overlay-content h3 {
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Animation for cards */
+  .service-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .service-card:nth-child(1) { animation-delay: 0.1s; }
+  .service-card:nth-child(2) { animation-delay: 0.2s; }
+  .service-card:nth-child(3) { animation-delay: 0.3s; }
+  .service-card:nth-child(4) { animation-delay: 0.4s; }
+  .service-card:nth-child(5) { animation-delay: 0.5s; }
+  .service-card:nth-child(6) { animation-delay: 0.6s; }
+</style> 

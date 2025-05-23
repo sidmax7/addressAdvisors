@@ -212,23 +212,20 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-    opacity: 0;
-    transition: var(--transition);
+    height: 0;
+    background: #E81E25;
+    opacity: 1;
+    transition: height 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   
   .image-container:hover .overlay {
-    opacity: 1;
+    height: 100%;
+    padding: 2rem;
   }
   
   .overlay-content {
@@ -267,12 +264,13 @@
   .service-features li {
     padding: 0.75rem 0;
     color: var(--text-white);
-    position: relative;
-    padding-left: 2rem;
     opacity: 0;
     transform: translateY(20px);
     font-size: 1rem;
     font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
   }
   
   /* Animation trigger on hover */
@@ -286,14 +284,14 @@
   .image-container:hover .service-features li:nth-child(4) { animation-delay: 0.4s; }
   
   .service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
+    content: '\2022';
+    color: var(--text-white);
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     opacity: 0;
     transform: scale(0);
+    margin-right: 0.75rem;
+    line-height: 1;
   }
   
   /* Checkmark animation on hover */

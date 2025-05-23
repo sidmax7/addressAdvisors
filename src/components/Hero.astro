@@ -31,12 +31,20 @@
             </div>
             <div class="search-field">
               <label>Type</label>
-              <select>
-                <option>Residential</option>
-                <option>Commercial</option>
-                <option>Apartment</option>
-                <option>Villa</option>
-              </select>
+              <div class="custom-select">
+                <button type="button" class="select-button" id="propertyTypeSelect">
+                  <span class="select-value">Residential</span>
+                  <svg class="select-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path stroke="rgba(255,255,255,0.8)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 8 4 4 4-4"/>
+                  </svg>
+                </button>
+                <div class="select-dropdown" id="propertyTypeDropdown">
+                  <div class="select-option" data-value="residential">Residential</div>
+                  <div class="select-option" data-value="commercial">Commercial</div>
+                  <div class="select-option" data-value="apartment">Apartment</div>
+                  <div class="select-option" data-value="villa">Villa</div>
+                </div>
+              </div>
             </div>
             <button class="search-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -220,7 +228,7 @@
   }
   
   .search-field input,
-  .search-field select {
+  .search-field .select-button {
     padding: 0;
     border: none;
     border-radius: 0;
@@ -231,6 +239,10 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     height: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .search-field input::placeholder {
@@ -239,26 +251,121 @@
   }
   
   .search-field input:focus,
-  .search-field select:focus {
+  .search-field .select-button:focus {
     outline: none;
     background: transparent;
     color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
   }
   
-  .search-field select {
+  /* Custom Select Styling */
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+  
+  .select-button {
+    width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  
+  .select-value {
+    flex: 1;
+  }
+  
+  .select-arrow {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .custom-select.open .select-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .select-dropdown {
+    position: fixed;
+    background: transparent;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.3s linear 0.3s; /* Delay visibility transition until opacity is 0 */
+    z-index: 9999;
+    overflow-y: auto;
+    min-width: 200px; /* Ensure a minimum width */
+    max-height: 200px; /* Consistent with JS logic */
+  }
+  
+  .select-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0s; /* Remove delay when becoming active */
+  }
+  
+  .select-option {
+    padding: 1rem 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
     cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0 center;
-    background-repeat: no-repeat;
-    background-size: 1.25em 1.25em;
-    padding-right: 1.5rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
   }
   
-  .search-field select option {
-    background: rgba(17, 24, 39, 0.95);
-    color: white;
-    padding: 0.5rem;
+  .select-option:last-child {
+    border-bottom: none;
+  }
+  
+  .select-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.1), 
+      transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .select-option:hover {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    color: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .select-option:hover::before {
+    left: 100%;
+  }
+  
+  .select-option.selected {
+    background: rgba(220, 38, 38, 0.2);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    color: rgba(255, 255, 255, 0.98);
+    font-weight: 500;
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 0 0 1px rgba(220, 38, 38, 0.3);
+  }
+  
+  .select-option:active {
+    transform: scale(0.98);
   }
   
   .search-btn {
@@ -439,7 +546,7 @@
     }
     
     .search-field input,
-    .search-field select {
+    .search-field .select-button {
       font-size: 0.95rem;
     }
     
@@ -455,6 +562,18 @@
     
     .stat-item h3 {
       font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+    }
+    
+    /* Custom dropdown mobile adjustments */
+    .select-dropdown {
+      border-radius: 8px;
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+    }
+    
+    .select-option {
+      padding: 0.875rem 1rem;
+      font-size: 0.95rem;
     }
   }
   
@@ -483,7 +602,7 @@
     }
     
     .search-field input,
-    .search-field select {
+    .search-field .select-button {
       font-size: 0.9rem;
     }
     
@@ -508,4 +627,140 @@
       bottom: 2rem;
     }
   }
-</style> 
+
+  .service-card:nth-child(6) { animation-delay: 0.6s; }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const customSelect = document.querySelector('.custom-select');
+    const selectButton = document.getElementById('propertyTypeSelect');
+    const selectDropdown = document.getElementById('propertyTypeDropdown');
+    const selectValue = document.querySelector('.select-value');
+    const selectOptions = document.querySelectorAll('.select-option');
+    
+    if (!customSelect || !selectButton || !selectDropdown || !selectValue) {
+      console.error('Custom select elements not found!');
+      return;
+    }
+    
+    const originalParent = selectDropdown.parentNode;
+    if (!originalParent) {
+      console.error('Dropdown has no original parent!');
+      return;
+    }
+
+    // Function to position dropdown
+    function positionDropdown() {
+      if (!selectButton || !selectDropdown) return;
+      
+      const buttonRect = selectButton.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
+      
+      let top = buttonRect.bottom + 8;
+      let left = buttonRect.left;
+      let width = Math.max(buttonRect.width, 200); // Ensure min width
+      
+      // Attempt to get dropdown height, might be 0 if not fully rendered
+      const dropdownHeight = selectDropdown.offsetHeight || 200; // Fallback height
+
+      if (left + width > viewportWidth - 10) { // 10px buffer from edge
+        left = viewportWidth - width - 10;
+      }
+      if (left < 10) {
+        left = 10;
+      }
+      
+      if (top + dropdownHeight > viewportHeight - 10) { 
+        top = buttonRect.top - dropdownHeight - 8;
+        if (top < 10) { // If still off-screen above, position below with scroll
+            top = buttonRect.bottom + 8;
+        }
+      }
+      if (top < 10 && buttonRect.bottom + 8 + dropdownHeight <= viewportHeight -10) { // Check again if it can go below
+          top = buttonRect.bottom + 8;
+      }
+      
+      selectDropdown.style.top = `${top}px`;
+      selectDropdown.style.left = `${left}px`;
+      selectDropdown.style.width = `${width}px`;
+    }
+
+    function openDropdown() {
+      if (!selectDropdown || !customSelect) return;
+      if (selectDropdown.parentNode !== document.body) {
+        document.body.appendChild(selectDropdown);
+      }
+      positionDropdown();
+      selectDropdown.classList.add('active');
+      customSelect.classList.add('open'); // For button arrow styling
+    }
+
+    function closeDropdown() {
+      if (!selectDropdown || !customSelect || !originalParent) return;
+      selectDropdown.classList.remove('active');
+      customSelect.classList.remove('open'); // For button arrow styling
+      // Move back to original parent to maintain DOM structure and prevent memory leaks
+      if (selectDropdown.parentNode === document.body) {
+        originalParent.appendChild(selectDropdown);
+      }
+    }
+
+    selectButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (selectDropdown.classList.contains('active')) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!selectButton || !selectDropdown) return;
+      // If click is outside the button AND outside the dropdown itself
+      if (!selectButton.contains(e.target as Node) && !selectDropdown.contains(e.target as Node)) {
+        if (selectDropdown.classList.contains('active')) {
+          closeDropdown();
+        }
+      }
+    });
+
+    selectOptions.forEach(option => {
+      option.addEventListener('click', function(this: HTMLElement) {
+        if (!selectValue || !selectButton || !selectDropdown) return;
+        const value = this.getAttribute('data-value');
+        const text = this.textContent;
+        if (!value || !text) return;
+        selectValue.textContent = text;
+        selectOptions.forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        selectButton.setAttribute('data-value', value);
+        closeDropdown();
+      });
+    });
+
+    selectButton.addEventListener('keydown', function(e) {
+      if (!selectDropdown) return;
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (selectDropdown.classList.contains('active')) closeDropdown(); else openDropdown();
+      } else if (e.key === 'Escape') {
+        if (selectDropdown.classList.contains('active')) closeDropdown();
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (selectDropdown && selectDropdown.classList.contains('active')) positionDropdown();
+    });
+    // Use capture: true for scroll to catch it earlier in event phase
+    window.addEventListener('scroll', function() {
+      if (selectDropdown && selectDropdown.classList.contains('active')) positionDropdown();
+    }, true);
+
+    const firstOption = selectOptions[0];
+    if (firstOption) {
+      firstOption.classList.add('selected');
+    }
+  });
+</script> 

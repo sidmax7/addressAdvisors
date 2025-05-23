@@ -11,12 +11,55 @@
     <div class="container">
       <div class="hero-text">
         <h1 class="hero-title">
-          THE ONLY REAL ESTATE CONSULTANTS YOU'LL<br/>EVER NEED
+          Solution to All Your<br/>
+          Property Needs
         </h1>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary btn-large">
-            GET IN TOUCH
-          </a>
+        <p class="hero-subtitle">
+          Get the features you need in all the property we offer with the best price you can get
+        </p>
+        
+        <!-- Property Search Form -->
+        <div class="property-search">
+          <div class="search-fields">
+            <div class="search-field">
+              <label>Location</label>
+              <input type="text" placeholder="Enter location" value="Mumbai, India">
+            </div>
+            <div class="search-field">
+              <label>Price</label>
+              <input type="text" placeholder="Price range" value="₹ 50,00,000">
+            </div>
+            <div class="search-field">
+              <label>Type</label>
+              <select>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Apartment</option>
+                <option>Villa</option>
+              </select>
+            </div>
+            <button class="search-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p>Cities</p>
+          </div>
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Properties</p>
+          </div>
+          <div class="stat-item">
+            <h3>1,000+</h3>
+            <p>Happy Clients</p>
+          </div>
         </div>
       </div>
     </div>
@@ -34,12 +77,13 @@
     height: 100vh;
     min-height: 700px;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
     overflow: hidden;
     color: var(--text-white);
-    padding-top: 20vh; /* Push content down from top */
+    padding-top: 10vh;
+    width: 100%;
   }
   
   .hero-video {
@@ -64,10 +108,11 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(
-      0deg,
-      rgba(17, 24, 39, 0.7) 0%,
-      rgba(17, 24, 39, 0.4) 40%,
-      transparent 70%
+      135deg,
+      rgba(17, 24, 39, 0.8) 0%,
+      rgba(17, 24, 39, 0.6) 40%,
+      rgba(17, 24, 39, 0.4) 70%,
+      transparent 100%
     );
     z-index: -1;
   }
@@ -75,88 +120,226 @@
   .hero-content {
     position: relative;
     z-index: 1;
-    width: 150%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px;
     padding: 0 var(--container-padding);
   }
   
+  /* Container override for hero section */
+  .hero .container {
+    max-width: none;
+    width: 100%;
+
+  }
+  
   .hero-text {
-    /* Content is centered via parent */
+    max-width: 100%;
+    margin-left: 25%;
   }
   
   .hero-title {
-    font-size: clamp(2.2rem, 1vw, 3.6rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
-  .hero-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 15rem;
+  .hero-subtitle {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
   }
   
-  .btn-large {
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+  /* Property Search Form */
+  .property-search {
+    margin-bottom: 4rem;
+    max-width: 700px;
+  }
+  
+  .search-fields {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0;
+    padding: 0;
+    gap: 0;
+    align-items: stretch;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
-    min-width: 200px;
+    width: 100%;
   }
   
-  .btn-primary {
-    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-    color: white;
-    box-shadow: 
-      0 4px 15px rgba(220, 38, 38, 0.4),
-      0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 2;
-  }
-  
-  /* Circular fade overlay */
-  .btn-primary::before {
+  .search-fields::before {
     content: '';
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: linear-gradient(135deg, #1D184B 0%, #2D1B69 100%);
-    border-radius: 50%;
-    transform: translateX(-50%);
-    transition: all 0.4s ease;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%, 
+      rgba(255, 255, 255, 0.02) 50%, 
+      rgba(255, 255, 255, 0.08) 100%);
+    border-radius: 0;
     z-index: -1;
   }
   
-  .btn-primary:hover::before {
-    width: 300px;
-    height: 300px;
+  .search-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    padding: 1.5rem 1.25rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .search-field:last-of-type {
+    border-right: none;
+  }
+  
+  .search-field label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .search-field input,
+  .search-field select {
+    padding: 0;
+    border: none;
     border-radius: 0;
-  }
-  
-  .btn-primary:hover {
-    box-shadow: 
-      0 4px 15px rgba(29, 24, 75, 0.4),
-      0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
     color: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    height: auto;
   }
   
-  .btn-primary:active {
-    transform: translateY(1px);
+  .search-field input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+  
+  .search-field input:focus,
+  .search-field select:focus {
+    outline: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .search-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0 center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+    padding-right: 1.5rem;
+  }
+  
+  .search-field select option {
+    background: rgba(17, 24, 39, 0.95);
+    color: white;
+    padding: 0.5rem;
+  }
+  
+  .search-btn {
+    background: linear-gradient(135deg, 
+      rgba(220, 38, 38, 1) 0%, 
+      rgba(185, 28, 28, 1) 100%);
+    border: none;
+    color: white;
+    border-radius: 0;
+    padding: 1.5rem 1.75rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .search-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.15), 
+      transparent);
+    transition: left 0.5s;
+  }
+  
+  .search-btn:hover::before {
+    left: 100%;
+  }
+  
+  .search-btn:hover {
+    background: linear-gradient(135deg, 
+      rgba(185, 28, 28, 1) 0%, 
+      rgba(153, 27, 27, 1) 100%);
+  }
+  
+  .search-btn:active {
+    background: linear-gradient(135deg, 
+      rgba(153, 27, 27, 1) 0%, 
+      rgba(127, 29, 29, 1) 100%);
+  }
+  
+  .search-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Statistics */
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    max-width: 600px;
+    justify-content: flex-start;
+  }
+  
+  .stat-item {
+    text-align: left;
+    flex-shrink: 0;
+  }
+  
+  .stat-item h3 {
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .stat-item p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
   
   .scroll-indicator {
@@ -189,40 +372,136 @@
   }
   
   /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero .container {
+      width: 90%;
+      margin-left: -0.25rem;
+    }
+    
+    .search-fields {
+      flex-direction: column;
+    }
+    
+    .search-field {
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.25rem 1.5rem;
+    }
+    
+    .search-field:last-of-type {
+      border-bottom: none;
+    }
+    
+    .search-btn {
+      padding: 1.25rem 1.5rem;
+      justify-content: center;
+    }
+  }
+
   @media (max-width: 768px) {
     .hero {
       min-height: 600px;
-      padding-top: 15vh; /* Less padding on tablets */
+      padding-top: 15vh;
+    }
+    
+    .hero .container {
+      width: 95%;
+      padding: 0 1rem;
+      margin-left: 0;
     }
     
     .hero-title {
-      font-size: clamp(1.8rem, 6vw, 2.8rem);
-      margin-bottom: 2rem;
-      line-height: 1.3;
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      margin-bottom: 1rem;
     }
     
-    .btn-large {
-      padding: 0.9rem 2rem;
-      font-size: 0.9rem;
-      min-width: 180px;
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .property-search {
+      max-width: 100%;
+    }
+    
+    .search-fields {
+      flex-direction: column;
+    }
+    
+    .search-field {
+      padding: 1rem 1.25rem;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .search-field:last-of-type {
+      border-bottom: none;
+    }
+    
+    .search-field input,
+    .search-field select {
+      font-size: 0.95rem;
+    }
+    
+    .search-btn {
+      padding: 1rem 1.25rem;
+    }
+    
+    .hero-stats {
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+    
+    .stat-item h3 {
+      font-size: clamp(1.5rem, 3.5vw, 1.875rem);
     }
   }
   
   @media (max-width: 480px) {
     .hero {
       min-height: 550px;
-      padding-top: 12vh; /* Even less padding on mobile */
+      padding-top: 12vh;
     }
 
     .hero-title {
-      font-size: clamp(1.5rem, 7vw, 2.2rem);
+      font-size: clamp(1.5rem, 6vw, 1.875rem);
+      margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.9rem;
       margin-bottom: 1.5rem;
     }
     
-    .btn-large {
-      width: 100%;
-      max-width: 280px;
-      padding: 1rem 1.5rem;
+    .property-search {
+      margin-bottom: 2rem;
+    }
+    
+    .search-field {
+      padding: 0.875rem 1rem;
+    }
+    
+    .search-field input,
+    .search-field select {
+      font-size: 0.9rem;
+    }
+    
+    .search-btn {
+      padding: 0.875rem 1rem;
+    }
+    
+    .hero-stats {
+      gap: 1.5rem;
+      justify-content: flex-start;
+    }
+    
+    .stat-item h3 {
+      font-size: 1.25rem;
+    }
+    
+    .stat-item p {
+      font-size: 0.875rem;
     }
     
     .scroll-indicator {

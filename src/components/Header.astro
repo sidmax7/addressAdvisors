@@ -56,6 +56,7 @@
     box-shadow: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    width: 100%;
   }
   
   /* Top waterfall layer - Heavy blur */
@@ -103,6 +104,13 @@
     -webkit-mask: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.2) 90%, transparent 100%);
   }
   
+  /* Add container override for wider occupiable space */
+  .container {
+    max-width: none;
+    width: 75%;
+    padding: 0;
+  }
+  
   /* .nav {
     padding: 1.5rem 0;
   } */
@@ -114,12 +122,13 @@
     width: 100%;
     position: relative;
     flex-shrink: 0; /* Prevent nav menu from shrinking */
+    padding: 1.5rem 0;
   }
   
   /* Logo */
   .logo {
     flex-shrink: 0; /* Prevent logo from shrinking */
-    
+    margin-left: -0.5rem; /* Move logo further to the left */
   }
   
   .logo a {
@@ -136,6 +145,7 @@
     display: flex;
     list-style: none;
     margin: 0;
+    margin-right: -0.5rem; /* Move nav-menu further to the right */
     padding: 0;
     gap: 2.5rem; /* Increased gap between nav items */
     flex-shrink: 0; /* Prevent nav menu from shrinking */
@@ -257,20 +267,29 @@
     
     .mobile-toggle {
       display: flex;
+      margin-right: -0.5rem; /* Move mobile toggle further to the right */
     }
 
-    .nav-content {
+    .container {
       padding: 0 1.5rem; /* Reduced padding on smaller screens */
     }
   }
 
   @media (max-width: 768px) {
-    .nav-content {
+    .container {
       padding: 0 1rem; /* Further reduced padding on mobile */
     }
 
     .logo img {
       height: 50px; /* Smaller logo on mobile */
+    }
+
+    .logo {
+      margin-left: -0.25rem; /* Less negative margin on mobile */
+    }
+
+    .mobile-toggle {
+      margin-right: -0.25rem; /* Less negative margin on mobile */
     }
   }
   

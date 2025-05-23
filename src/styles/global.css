@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
   --spacing-3xl: 6rem;
   
   /* Container */
-  --container-max-width: 1200px;
+  --container-max-width: 1400px;
   --container-padding: 1rem;
   
   /* Shadows */

@@ -1,15 +1,20 @@
 <section class="contact section fade-in" id="contact">
   <div class="container">
-    <div class="section-header fade-in">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-description">
-        Ready to find your perfect property? Let's discuss your real estate needs.
-      </p>
-    </div>
-    
     <div class="contact-content">
+      <div class="contact-left">
+        <h2 class="contact-title">Contact us</h2>
+        <a href="https://maps.app.goo.gl/FuUEWxvn2e6hGe6d9" target="_blank" class="map-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          View Location in Maps
+        </a>
+      </div>
+      
       <div class="contact-form-wrapper fade-in">
         <form class="contact-form" id="contactForm">
+          <h3>Send us a message</h3>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
@@ -20,7 +25,9 @@
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required>
             </div>
-            
+          </div>
+          
+          <div class="form-row">
             <div class="form-group">
               <label for="phone">Phone No</label>
               <input type="tel" id="phone" name="phone" required>
@@ -42,8 +49,17 @@
             </div>
           </div>
           
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your property needs..."></textarea>
+          </div>
+          
           <button type="submit" class="btn btn-primary btn-large">
-            Submit
+            SEND MESSAGE
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7,7 17,7 17,17"></polyline>
+            </svg>
           </button>
         </form>
       </div>
@@ -53,92 +69,229 @@
 
 <style>
   .contact {
-    background: linear-gradient(135deg, var(--bg-section) 0%, var(--bg-color) 100%);
-    padding: 6rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/assets/mapAddressAdvisors.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0rem 0; /* Reduced padding, especially top */
+    position: relative;
+    min-height: 80vh; /* Ensure it takes up significant screen height */
+    display: flex; /* Added to help with vertical alignment */
+    align-items: flex-start; /* Align form to the top */
   }
   
-  .section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 4rem;
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
   }
   
-  .section-title {
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-  
-  .section-description {
-    font-size: 1.25rem;
-    color: var(--text-light);
-    line-height: 1.7;
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 100%; /* Container takes full width */
+    height: 100%; /* Container takes full height */
+    display: flex; /* To help position the form wrapper */
+    justify-content: flex-end; /* Align form wrapper to the right */
   }
   
   .contact-content {
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: flex-end; /* Only position the form to the right */
+    align-items: center; /* Center content vertically */
+    width: 200%;
+    height: 100%;
+    padding: 0; /* Add 2.5% padding top and bottom to center the 95% height form */
+    padding-bottom: 2rem;
+  }
+
+  .contact-left {
+    /* Remove flex properties as we're using fixed positioning */
+  }
+
+  .contact-title {
+    font-size: clamp(3rem, 4vw, 6rem);
+    font-weight: 600;
+    color: var(--text-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    line-height: 1.1;
+    position: fixed; /* Fixed positioning */
+    bottom: 8rem; /* Distance from bottom of viewport */
+    left: 20rem; /* Distance from left of viewport */
+    z-index: 10; /* Ensure it appears above other elements */
+  }
+
+  .map-button {
+    position: fixed; /* Fixed positioning like the title */
+    bottom: 4rem; /* Position below the Contact us title */
+    left: 20rem; /* Align with the title */
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px; /* Rounded pill shape */
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .map-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .map-button svg {
+    transition: transform 0.2s ease;
+  }
+
+  .map-button:hover svg {
+    transform: scale(1.1);
   }
   
   .contact-form-wrapper {
-    max-width: 1200px;
-    width: 100%;
+    max-width: 50%; /* Occupy 50% of the parent's width */
+    width: 75%; /* Explicitly set width to 50% */
+    margin-left: 0; /* Remove auto margin, rely on parent flex */
+    margin-right: 0; /* Remove previous margin, will be handled by parent padding or direct positioning */
+    padding: 0rem; /* Add padding to the form wrapper itself for internal spacing from screen edge */
+    box-sizing: border-box; /* Ensure padding is included in the 50% width */
+    height: 95%; /* Make wrapper take 95% of the section height */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
   }
   
-  .contact-form {
-    background: var(--bg-color);
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(31, 41, 55, 0.1);
+    .contact-form {
+    background: white; /* Changed to solid white background */
+    padding: 3rem 0 10rem 3rem; /* Remove right padding, keep others */
+    border-radius: 0px; /* Re-enabled border radius */
+    border: none; /* Removed border for clean white look */
+    
+    position: relative;
+    flex-grow: 1; /* Allow form to grow and fill the wrapper */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack form elements vertically */
+  }
+
+  /* Remove the pseudo-element as we have solid white background now */
+  .contact-form::before {
+    display: none;
+  }
+  
+  .contact-form h3 {
+    color: var(--text-color); /* Changed back to dark text for white background */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: none; /* Removed text shadow for white background */
   }
   
   .form-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
   .form-group {
     margin-bottom: 0;
+    padding-right: 3rem; /* Add right padding moved from contact-form */
   }
   
   .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
-    color: var(--text-color);
-    font-size: 0.875rem;
+    color: var(--text-color); /* Changed to dark text for white background */
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-shadow: none; /* Removed text shadow for white background */
   }
   
-  .form-group input,
-  .form-group select {
+    .form-group input,
+  .form-group select,
+  .form-group textarea {
     width: 100%;
-    padding: 0.875rem;
-    border: 2px solid rgba(31, 41, 55, 0.1);
-    border-radius: 8px;
+    padding: 0.875rem 0; /* Remove horizontal padding, keep vertical */
+    border: none; /* Remove all borders */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Only bottom border */
+    border-radius: 0; /* Remove border radius for clean lines */
     font-size: 1rem;
+    font-weight: 500;
+    background: transparent; /* Transparent background */
+    color: var(--text-color); /* Dark text */
+    font-family: inherit;
     transition: var(--transition);
-    background: var(--bg-color);
-    color: var(--text-color);
-    height: 48px;
+    /* height: auto; Ensure this is not overriding specific heights below */
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Changed to dark placeholder for white background */
+    font-weight: 400;
   }
   
-  .form-group input:focus,
-  .form-group select:focus {
-    outline: none;
-    border-color: #dc2626;
-    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  .form-group select {
+    padding-right: 2.5rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M6%208L10%2012L14%208%22%20stroke%3D%22rgba(0,0,0,0.6)%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 0 center; /* Adjusted position since no padding */
+    background-size: 1em;
+    background-color: transparent; /* Ensure transparent background */
+    /* height will be set by the rule below */
+  }
+
+  /* Set specific height for text inputs and select to match button height */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select {
+    height: 52px; /* Match button height */
   }
   
+  /* Textarea specific styles */
   .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 120px; /* Default min-height for textarea */
+    /* padding-top and padding-bottom are already handled by the general rule for all inputs/select/textarea */
+  }
+  
+  /* Remove the problematic combined rule by commenting it out or deleting it */
+  /* 
+  .form-group input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]), 
+  .form-group textarea {
+    resize: vertical; 
+    min-height: 120px; 
+  }
+  */
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: #1a1a1a; /* Dark bottom border on focus */
+    border-bottom-width: 2px; /* Thicker bottom border on focus */
+    box-shadow: none; /* Remove box shadow for clean look */
   }
   
   .btn {
@@ -147,7 +300,7 @@
     justify-content: center;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     font-size: 1.125rem;
     text-decoration: none;
@@ -157,100 +310,70 @@
     letter-spacing: 0.5px;
   }
   
-  .btn-primary {
-    background: #dc2626;
+    .btn-primary {
+    background: #1a1a1a; /* Dark background like in the image */
     color: var(--text-white);
-    width: 100%;
-    height: 48px;
-  }
-  
-  .btn-primary:hover {
-    background: #b91c1c;
-    transform: translateY(-1px);
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .contact-item {
-    background: var(--bg-color);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(31, 41, 55, 0.06);
-    transition: var(--transition);
-  }
-  
-  .contact-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  }
-  
-  .contact-icon-wrapper {
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-icon {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-    border-radius: 16px;
+    width: auto; /* Remove full width */
+    min-width: 180px; /* Set minimum width for button */
+    height: 52px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    margin-left: auto; /* Push button to the right */
+    margin-right: 0; /* Ensure no right margin */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-white);
-    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25);
+    gap: 0.5rem; /* Space between text and arrow */
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0 2rem; /* Keep internal padding for text/icon spacing */
+    border-radius: 5px 0 0 5px; /* Remove right side border radius */
   }
-  
-  .contact-details h4 {
-    color: var(--text-color);
-    font-size: 1.375rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
+
+  .btn-primary:hover {
+    background: #333333; /* Lighter dark on hover */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   }
-  
-  .contact-details p {
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
+
+  .btn-primary svg {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(2px) translateY(-2px); /* Arrow moves on hover */
   }
   
   /* Responsive Design */
   @media (max-width: 1024px) {
-    .contact-content {
-      justify-content: center;
-    }
-    
     .contact-form-wrapper {
-      max-width: 100%;
+      max-width: 60%; /* Adjust for tablets */
+      width: 60%;
+      /* margin-left: 40%; */ /* if not using flex on parent */
+      padding: 0 1.5rem;
     }
-    
-    .form-row {
-      gap: 1rem;
+    .contact {
+      align-items: center; /* Center on tablets if it looks better */
+      padding: 2rem 0;
+    }
+    .contact-content {
+      padding-top: 1rem;
     }
   }
   
   @media (max-width: 768px) {
     .contact {
-      padding: 3rem 0;
+      padding: 2rem 0;
+      background-attachment: scroll;
+      align-items: center; /* Center on mobile */
+      min-height: auto; /* Adjust height for mobile */
     }
-    
-    .section-header {
-      margin-bottom: 2rem;
-    }
-    
-    .section-title {
-      font-size: 2rem;
+        
+    .contact-form-wrapper {
+      max-width: 100%;
+      width: 100%;
+      margin: 0; /* Reset margins */
+      padding: 0 1rem; /* Padding for mobile */
     }
     
     .contact-form {
@@ -258,26 +381,15 @@
     }
     
     .form-row {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
       gap: 1rem;
       margin-bottom: 1rem;
-    }
-    
-    .form-group input,
-    .form-group select {
-      height: 44px;
-      font-size: 0.95rem;
     }
   }
   
   @media (max-width: 480px) {
     .contact-form {
       padding: 1rem;
-    }
-    
-    .form-row {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
     }
     
     .form-group label {
@@ -287,14 +399,27 @@
     .form-group input,
     .form-group select {
       padding: 0.75rem;
-      height: 42px;
+      height: 44px;
+      font-size: 0.9rem;
+    }
+    
+    .form-group textarea {
+      padding: 0.75rem;
       font-size: 0.9rem;
     }
     
     .btn {
       padding: 0.875rem 1.5rem;
       font-size: 1rem;
-      height: 44px;
+      height: 48px;
+    }
+    
+    .contact-items {
+      gap: 1rem;
+    }
+    
+    .contact-item {
+      padding: 0.75rem;
     }
   }
 </style>

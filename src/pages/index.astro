@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
-import About from '../components/About.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Blog from '../components/Blog.astro';
@@ -15,10 +16,38 @@ import Chatbot from '../components/Chatbot.astro';
   <main>
     <Hero />
     <Services />
-    <About />
+    <section class="about-wrapper">
+      <AboutUs />
+    </section>
+      <Testimonials />
     <Blog />
     <Contact />
   </main>
   <Footer />
   <Chatbot />
 </Layout>
+
+<style is:global>
+  /* It's often better to define such global-like styles in a dedicated CSS file,
+     but for this specific case, adding it here. 
+     Consider moving to a global stylesheet if you have one. */
+  .about-wrapper {
+    background-color: #1A1A1A;
+    color: #E0E0E0; /* Default light text color for children */
+    padding: 4rem 0; /* Overall padding for the dark band */
+  }
+
+  /* Ensure titles within the dark band are bright white */
+  .about-wrapper h1,
+  .about-wrapper h2,
+  .about-wrapper h3,
+  .about-wrapper h4,
+  .about-wrapper h5,
+  .about-wrapper h6 {
+    color: #FFFFFF; 
+  }
+
+  /* Ensure paragraph text within the dark band is the slightly dimmer E0E0E0 or B0B0B0 */
+  /* The .section-text p in AboutUs.astro already sets color: #B0B0B0; */
+  /* If Testimonials needs specific text colors, they should be in Testimonials.astro */
+</style>

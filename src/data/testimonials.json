@@ -1,0 +1,42 @@
+[
+  {
+    "id": "testimonial-1",
+    "title": "We take pride in delivering exceptional solutions",
+    "quote": "I believe I cannot thank you enough for helping us with find our office space in Bangalore. Your team and your efforts have helped us settle in a space that fits our requirements perfectly well. Thank you for the support, we truly appreciate it!",
+    "authorName": "Shyamli Mishra",
+    "authorRole": "Freight Tiger",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+  },
+  {
+    "id": "testimonial-2", 
+    "title": "Outstanding professional service",
+    "quote": "Sunny Mogra and his team are thorough professionals in the area of Real Estate and they cover the entire spectrum. They clearly walk you through the process from beginning to end so you are completely informed and ready for what's next. They were extremely helpful and supportive along the way and structured the deal as per our requirement.",
+    "authorName": "Vivek Chowhan",
+    "authorRole": "Treebo",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+  },
+  {
+    "id": "testimonial-3",
+    "title": "Integrity and professionalism at its best",
+    "quote": "The process by which options available for Wishing Step Pictures's office to be relocated were presented and followed up, has been very professional. For new prospective new clients my suggestion would be to give the firm a chance, as the personnel working at the firm have integrity which is extremely valuable in many respects.",
+    "authorName": "Sanyam Jain", 
+    "authorRole": "Wishing Step Pictures",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face"
+  },
+  {
+    "id": "testimonial-4",
+    "title": "Exceptional customer experience",
+    "quote": "Address Advisors transformed our office search from a stressful experience into a smooth journey. Their deep market knowledge and personalized approach helped us find the perfect workspace that aligns with our company culture and business needs.",
+    "authorName": "Priya Sharma",
+    "authorRole": "Tech Solutions Inc",
+    "image": "https://images.unsplash.com/photo-1744370614231-4605ec37890a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": "testimonial-5",
+    "title": "Beyond expectations",
+    "quote": "Working with Address Advisors was a game-changer for our expansion plans. They not only found us multiple great options but also negotiated terms that were favorable to our business. Their expertise saved us both time and money.",
+    "authorName": "Rajesh Kumar",
+    "authorRole": "Growth Ventures Ltd",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face"
+  }
+] 

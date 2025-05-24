@@ -1,0 +1,262 @@
+<section class="about-us fade-in" id="about">
+  <div class="container">
+    <!-- Who We Are Section -->
+    <div class="about-section fade-in">
+      <div class="section-content">
+        <div class="section-image fade-in-left">
+          <div class="image-wrapper">
+            <div class="logo-container">
+              <div class="company-logo">
+                <img src="/assets/screen_bw1-72fcec4b.jpg" alt="Address Advisors Logo" />
+              </div>
+              <div class="grid-pattern"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-text fade-in-right">
+          <h3 class="section-title">Who we are?</h3>
+          <div class="section-content-text">
+            <p>
+              With a consulting and advisory approach to real estate brokerage services, Address Advisors is a 
+              one stop shop for all real estate brokerage solutions. With more than 100+ years of consolidated 
+              experience, Address Advisors has grown from a boutique <span class="highlight">real estate firm</span> to a leading property 
+              consulting organisation.
+            </p>
+            <p>
+              True to the spirit of our name, we play both advisory and consultancy 
+              roles for our clients to find them the best addresses across all asset classes whether, owned, 
+              rented or shared!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Us Section -->
+    <div class="about-section fade-in">
+      <div class="section-content">
+        <div class="section-text fade-in-left">
+          <h3 class="section-title">Why Us?</h3>
+          <div class="section-content-text">
+            <p>
+              A leadership team that boasts of the crème-de-la-crème of the industry, we take pride in knowing 
+              the pulse of the industry and beyond! With a strong understanding of the changing market 
+              conditions and a proven track record of delivering the best spaces to our clients, we help you add 
+              merit to your business and assets!
+            </p>
+          </div>
+        </div>
+        <div class="section-image fade-in-right">
+          <div class="image-wrapper">
+            <img src="/assets/Bridge_bw-4211c3ed.jpg" alt="Bridge" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Deliver Section -->
+    <div class="about-section fade-in">
+      <div class="section-content">
+        <div class="section-image fade-in-left">
+          <div class="image-wrapper">
+            <img src="/assets/Building_bw-9a8154da.jpg" alt="Building" />
+          </div>
+        </div>
+        <div class="section-text fade-in-right">
+          <h3 class="section-title">What we deliver?</h3>
+          <div class="section-content-text">
+            <p>
+              We are a dynamic, agile, fast growing company fuelled by innovation, dedication and expertise that 
+              spans cities and beyond the service lines. We endeavour to deliver real estate solutions that add 
+              value to your future!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-us {
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-section {
+    margin-bottom: 0;
+    max-width: none; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch; 
+    height: 450px;
+  }
+  
+  .about-section.reverse .section-content {
+    direction: rtl;
+  }
+  
+  .about-section.reverse .section-text,
+  .about-section.reverse .section-image {
+    direction: ltr;
+  }
+
+  .section-image, .section-text {
+    width: 100%;
+    height: 450px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .section-text {
+    padding: 1rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .section-title {
+    color: #FFFFFF; 
+    font-size: 1.75rem; 
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    position: relative;
+  }
+  
+  .section-title::before {
+    content: none; 
+  }
+  
+  .section-content-text {
+    max-width: none; 
+    height: auto;
+  }
+  
+  .section-content-text p {
+    color: #B0B0B0; 
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem; 
+  }
+  
+  .section-content-text p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .highlight {
+    color: #dc2626; 
+    font-weight: 600;
+  }
+  
+  .image-wrapper {
+    width: 100%;
+    height: 100%; 
+    border-radius: 0; 
+    overflow: hidden;
+    box-shadow: none; 
+    transition: none; 
+  }
+  
+  .image-wrapper:hover {
+    transform: none; 
+    box-shadow: none; 
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none; 
+    transition: none; 
+  }
+  
+  .image-wrapper:hover img {
+    filter: none; 
+    transform: none; 
+  }
+  
+  .logo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .company-logo {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .grid-pattern {
+    display: none; 
+  }
+
+  /* Responsive Design adjustments */
+  @media (max-width: 768px) {
+    .about-us {
+      padding: 3rem 0;
+    }
+    .section-content {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    
+    .section-image, .section-text {
+      height: auto;
+      min-height: 300px;
+    }
+
+    .section-text {
+      padding: 2rem;
+    }
+    
+    .about-section.reverse .section-content {
+      direction: ltr; 
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+    
+    .section-content-text p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-image, .section-text {
+      min-height: 250px;
+    }
+    
+    .section-text {
+      padding: 1.5rem;
+    }
+    
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-content-text p {
+      font-size: 0.9rem;
+    }
+  }
+</style> 
